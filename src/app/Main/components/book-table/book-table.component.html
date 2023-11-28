@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col" class="pointer" (click)="switchSortOrder('author')">Автор
+        <ng-container *ngIf="curSortField === 'author'">
+          {{ curSortOrderAsc ? '&#x2191;': '&#x2193;' }}
+        </ng-container>
+      </th>
+      <th scope="col" class="pointer" (click)="switchSortOrder('name')">Название
+        <ng-container *ngIf="curSortField === 'name'">
+          {{ curSortOrderAsc ? '&#x2191;': '&#x2193;' }}
+        </ng-container>
+
+      </th>
+      <th scope="col" class="pointer" (click)="switchSortOrder('publisher')">Издатель
+        <ng-container *ngIf="curSortField === 'publisher'">
+          {{ curSortOrderAsc ? '&#x2191;': '&#x2193;' }}
+        </ng-container>
+
+      </th>
+      <th scope="col" class="pointer" (click)="switchSortOrder('year')">Год
+        <ng-container *ngIf="curSortField === 'year'">
+          {{ curSortOrderAsc ? '&#x2191;': '&#x2193;' }}
+        </ng-container>
+
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-book-item
+      *ngFor="let book of bookList | appSortBook : curSortField : curSortOrderAsc"
+      [book]="book"
+    ></app-book-item>
+  </tbody>
+</table>

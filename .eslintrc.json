@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended",
+        "plugin:import/recommended"
+      ],
+      "plugins": ["import", "simple-import-sort"],
+      "settings": {
+        "import/resolver": {
+          "typescript": {
+            "project": "./tsconfig.json"
+          }
+        }
+      },
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/prefer-output-readonly": "warn",
+        "@angular-eslint/use-component-selector": "warn",
+        "lines-between-class-members": "off",
+        "@typescript-eslint/lines-between-class-members": [
+          "warn",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/ban-types": "off",
+        "import/no-unresolved": "warn",
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto",
+            "code": 120
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "@angular-eslint/template/no-duplicate-attributes": "error",
+        "@angular-eslint/template/no-any": "warn"
+        // "@angular-eslint/template/use-track-by-function": "warn"
+      }
+    }
+  ]
+}

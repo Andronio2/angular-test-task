@@ -1,0 +1,55 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col">
+      <div class="row g-3 align-items-center mb-1">
+        <div class="col-3">
+          <label for="inputName" class="col-form-label">Название</label>
+        </div>
+        <div class="col-9">
+          <input type="text" id="inputName" class="form-control" formControlName="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <label for="inputName" class="col-form-label">Автор</label>
+        </div>
+        <div class="col-7" (click)="$event.preventDefault(); $event.stopPropagation(); myDrop.open()">
+          <input type="text" id="inputName" class="form-control" formControlName="author" readonly>
+        </div>
+        <div class="col-2">
+          <div ngbDropdown class="d-inline-block" #myDrop="ngbDropdown">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button *ngFor="let author of authorList" ngbDropdownItem
+                (click)="$event.preventDefault(); onSelect(author)">
+                {{ author.surname }} {{ author.name }} {{ author.patronymic }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row g-3 align-items-center mb-1">
+        <div class="col-3">
+          <label for="inputPatronymic" class="col-form-label">Издательство</label>
+        </div>
+        <div class="col-9">
+          <input type="text" id="inputPatronymic" class="form-control" formControlName="publisher">
+        </div>
+      </div>
+      <div class="row g-3 align-items-center mb-1">
+        <div class="col-6">
+          <label for="inputBirthday" class="col-form-label">Год</label>
+        </div>
+        <div class="col-6">
+          <input type="number" min="1900" max="2099" step="1" [value]="currentYear" id="inputBirthday"
+            class="form-control" formControlName="year">
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Добавить</button>
+    </div>
+  </div>
+</form>
