@@ -1,0 +1,4 @@
+<div class="main__header"><button (click)="switchView()">{{ isCard ? 'Карточки' : 'Список'}}</button></div>
+<div [ngClass]="isCard ? 'main__card' : 'main__list' ">
+  <app-card *ngFor="let user of userList" [user]="user" [cardStyle]="isCard" (deleteUser)="onDelete($event)"></app-card>
+</div>

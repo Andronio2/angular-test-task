@@ -1,0 +1,13 @@
+<div class="paginator">
+  <div class="paginator__limit">
+    <select (change)="selectChange($event)">
+      <option *ngFor="let num of pageLimitList" [value]="num">{{num}}</option>
+    </select>
+  </div>
+  <div class="paginator__list">
+    <div *ngFor="let item of pageList" class="paginator__item" [class.active]="item === currentPage"
+      (click)="selectPage(item)">
+      {{item}}
+    </div>
+  </div>
+</div>

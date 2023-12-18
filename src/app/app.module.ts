@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainModule } from './Main/main.module';
-import { SharedModule } from './shared/shared.module';
+import { HeaderComponent } from './components/Header/Header.component';
+import { MainComponent } from './components/Main/Main.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './components/Card/Card.component';
+import { PaginatorComponent } from './components/Paginator/Paginator.component';
+import { LoaderComponent } from './components/Loader/Loader.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, MainModule, SharedModule],
+  declarations: [AppComponent, HeaderComponent, MainComponent, CardComponent, PaginatorComponent, LoaderComponent],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

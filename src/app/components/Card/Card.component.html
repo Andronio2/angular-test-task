@@ -1,0 +1,5 @@
+<div [ngClass]=" cardStyle ? 'card' : 'list' ">
+  <div>User: {{ user.user_name }}</div>
+  <div>Active: {{ user.is_active ? 'Да' : 'Нет' }}</div>
+  <div><button (click)="onClick()">Удалить</button></div>
+</div>

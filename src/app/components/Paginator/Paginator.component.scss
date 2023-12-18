@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.paginator {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  &__list {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__item {
+    cursor: pointer;
+    
+    &::before {
+      content: "[";
+    }
+
+    &::after {
+      content: "]";
+    }
+  }
+
+  .active {
+    font-weight: bold;
+  }
+}

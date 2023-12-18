@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.main {
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 20px 5px 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+  }
+}

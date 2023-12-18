@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.header {
+  &__search-bar {
+    max-width: 500px;
+    margin: 0 auto;
+
+    .input {
+      width: calc(100% - 85px);
+    }
+
+    .btn {
+      margin-left: 10px;
+      width: 75px;
+      height: 30px;
+      padding: 0 10px;
+      background-color: #09b003;
+      border-radius: 15px;
+      line-height: 30px;
+      box-shadow: 0 0 5px 5px #09b00380;
+    }
+  }
+}
